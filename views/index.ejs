@@ -1,0 +1,18 @@
+<%-include("partials/header.ejs")%>
+<div class="container">
+    <div class="todo w-50 h-auto">
+         <h1>To-Do List <img src="./Images/icon.png" alt="icon" class="img"></h1>
+        <div class="search">
+            <form action="/submit" method="POST"  class="d-flex">
+                <input type="text" class="form-control me-1" name="Task" id="input-box"  placeholder="Enter Your Task">
+                <input type="submit" id="send"  value="Add">
+            </form>
+        </div>
+        <ul class="list-container mt-4">
+            <!-- <li class="checked">Task 1</li>
+            <li>Task 2</li>
+            <li>Task 3</li> -->
+        </ul>
+    </div>
+</div>
+<%-include("partials/footer.ejs")%>

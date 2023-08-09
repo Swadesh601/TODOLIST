@@ -1,0 +1,49 @@
+<script>
+const inputbox = document.querySelector("#input-box");
+const containerlist = document.querySelector(".list-container");
+
+ document.querySelector("#send").addEventListener("click",function()
+ {
+    if(inputbox.value === ' ')
+    {
+        alert("You entered something");
+    }
+    else 
+    {
+        let li =document.createElement("li");
+        li.innerHTML=inputbox.value;
+        containerlist.appendChild(li);
+        let span =document.createElement("span");
+        span.innerHTML="\X";
+        li.appendChild(span);
+    }    
+    
+    inputbox.value = '';
+    storeData();
+ });
+
+containerlist.addEventListener("click",function(event)
+{
+  if(event.target.tagName==="LI")
+  {
+    event.target.classList.toggle("checked"); // checked is class name used in css
+  }
+
+  else if(event.target.tagName==="SPAN")
+  {
+    event.target.parentElement.remove();
+  }
+});
+
+function storeData()
+{
+    localStorage.setItem("data",containerlist.innerHTML);
+}
+
+function getData()
+{
+    containerlist.innerHTML = localStorage.getItem("data");
+}
+
+getData();
+</script>
