@@ -11,7 +11,7 @@ const port = 3000;
     res.render("index.ejs");
  });
 
-app.post("/submit" ,(req,res) => {
+app.post("/" ,(req,res) => {
     res.render("index.ejs");
 }); 
 
