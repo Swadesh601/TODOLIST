@@ -4,20 +4,22 @@ const containerlist = document.querySelector(".list-container");
 
  document.querySelector("#send").addEventListener("click",function()
  {
-    if(inputbox.value === ' ')
-    {
-        alert("You entered something");
-    }
-    else 
-    {
         let li =document.createElement("li");
         li.innerHTML=inputbox.value;
-        containerlist.appendChild(li);
-        let span =document.createElement("span");
-        span.innerHTML="\X";
-        li.appendChild(span);
-    }    
-    
+
+        if(li.innerHTML === "")
+        {
+          alert("Please enter your Task");
+        }
+
+        else
+        {
+          containerlist.appendChild(li);
+          let span =document.createElement("span");
+          span.innerHTML="\X";
+          li.appendChild(span);
+        }    
+
     inputbox.value = '';
     storeData();
  });
